@@ -84,7 +84,7 @@ module BunnyMock
     # @api public
     #
     def subscribe(*args, &block)
-      @consumers << [block, args]
+      @consumers << BunnyMock::Consumer.new(args, block)
       yield_consumers
 
       self
@@ -261,12 +261,12 @@ module BunnyMock
 
     # @private
     def yield_consumers
-      @consumers.each do |c, args|
+      @consumers.each do |consumer|
         # rubocop:disable AssignmentInCondition
         while message = all.pop
           response = pop_response(message)
-          store_acknowledgement(response, args)
-          c.call(response)
+          store_acknowledgement(response, consumer.args)
+          consumer.block.call(response)
         end
       end
     end
