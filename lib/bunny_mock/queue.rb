@@ -84,7 +84,7 @@ module BunnyMock
     # @api public
     #
     def subscribe(*args, &block)
-      consumer = BunnyMock::Consumer.new(args, block)
+      consumer = BunnyMock::Consumer.new(args, self, block)
       @consumers << consumer
       yield_consumers
 
