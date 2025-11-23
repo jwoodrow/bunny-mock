@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     s.add_dependency 'bunny', '>= 1.7'
   end
 
+  s.add_development_dependency 'base64', '>= 0.1.0'
   s.add_development_dependency 'rake', '~> 10.5.0'
   s.add_development_dependency 'rubocop', '= 0.40.0'
   s.add_development_dependency 'yard'
