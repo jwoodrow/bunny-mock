@@ -1,7 +1,6 @@
 #!/usr/bin/env gem build
 # encoding: utf-8
 
-require 'base64'
 require File.expand_path("../lib/bunny_mock/version", __FILE__)
 
 Gem::Specification.new do |s|
@@ -9,7 +8,6 @@ Gem::Specification.new do |s|
   s.version     = BunnyMock::VERSION.dup
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Andrew Rempe']
-  s.email       = [Base64.decode64('YW5kcmV3cmVtcGVAZ21haWwuY29t\n')]
   s.summary     = 'Mocking for the popular Bunny client for RabbitMQ'
   s.description = 'Easy to use mocking for testing the Bunny client for RabbitMQ'
   s.license     = 'MIT'
@@ -25,7 +23,6 @@ Gem::Specification.new do |s|
     s.add_dependency 'bunny', '>= 1.7'
   end
 
-  s.add_development_dependency 'base64', '>= 0.1.0'
   s.add_development_dependency 'rake', '~> 10.5.0'
   s.add_development_dependency 'rubocop', '= 0.40.0'
   s.add_development_dependency 'yard'
