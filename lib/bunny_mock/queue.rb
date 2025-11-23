@@ -104,7 +104,7 @@ module BunnyMock
       @consumers << consumer_obj
       yield_consumers
 
-      consumer
+      consumer_obj
     end
 
     ##
