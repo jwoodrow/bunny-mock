@@ -12,7 +12,7 @@ module BunnyMock
       current_consumers = queue.instance_variable_get('@consumers')
       queue.instance_variable_set('@consumers', current_consumers - [self])
       true
-    rescue Exception
+    rescue StandardError
       false
     end
   end
